@@ -61,10 +61,10 @@ jsonpify http://example.com
 
 ## Dome
 
-- 接口：[https://api.github.com/repos/zhansingsong/node-jsonpify?\_=1553585325899](https://api.github.com/repos/zhansingsong/node-jsonpify?_=1553585325899)
+- 接口：[https://postman-echo.com/get](https://postman-echo.com/get)
 
 - 使用 jsonpify
   ```js
-  jsonpify https://api.github.com -p 8888 -w github
+  npx jsonpify https://postman-echo.com -p 8880
   ```
-- 访问：[http://localhost:8888/repos/zhansingsong/node-jsonpify?\_=1553585325899](http://localhost:8888/repos/zhansingsong/node-jsonpify?_=1553585325899)
+- 访问：[http://localhost:8880/get?callback=jsonpify](http://localhost:8880/get?callback=jsonpify)
