@@ -1,6 +1,6 @@
 {
   "name": "jsonpify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a command transforming APIs into jsonp pattern",
   "main": "node-jsonpify.js",
   "scripts": {
