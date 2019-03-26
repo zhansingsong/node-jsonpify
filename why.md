@@ -1,18 +1,14 @@
 # node-jsonpify
 
-做项目时，常会使用 [YApi](https://github.com/YMFE/yapi) Mock 系统来辅助开发。在开发过程会存在对 jsonp 需求，但 YApi 不支持 jsonp。node-jsonpify 就为此而诞生的。
+自从组内部署了 [YApi](https://github.com/YMFE/yapi) Mock 系统后，做项目时都会使用它来辅助开发。但在最近的项目中，有对 jsonp 接口的需求。尴尬的是 YApi 不支持  jsonp。为了能快速地完成工作，就封装了一个将普通接口转为 jsonp 形式的命令行小工具：[jsonpify](https://github.com/zhansingsong/node-jsonpify)。
 
-![jsonpify](./jsonpify.gif)
+虽然代码很简单(95 sloc)，但该有的基本功能已具备：端口检查、日志输出、友好提示等。
 
-## Features
+## 效果
 
-- 使用简单
-- 95 SLOC
-- 支持端口检查
-- 提示友好
-- 日志输出
+![](./jsonpify.gif)
 
-## Install
+## 安装
 
 ```
 npm install jsonpify -g
@@ -22,7 +18,7 @@ npm install jsonpify -g
 npx jsonpify http://example.com
 ```
 
-## Usage
+## 使用
 
 ```js
 // 默认( 端口：3232，callback 参数及值：callback=callback)
@@ -37,7 +33,7 @@ jsonpify http://example.com
   ```
 
   > 如果指定的端口已被占用，jsonpify 会提供备选端口
-  
+
   ![](./jsonpify.png)
 
 - 指定 callback 参数名，来获取包裹 json 数据的函数名
@@ -71,10 +67,14 @@ jsonpify http://example.com
 
 ## Dome
 
-- 接口：[https://postman-echo.com/get](https://postman-echo.com/get)
+1. 接口：[https://postman-echo.com/get](https://postman-echo.com/get)
 
-- 使用 jsonpify
+2. 使用 jsonpify
   ```js
   npx jsonpify https://postman-echo.com -p 8880
   ```
-- 访问：[http://localhost:8880/get?callback=jsonpify](http://localhost:8880/get?callback=jsonpify)
+3. 访问：[http://localhost:8880/get?callback=jsonpify](http://localhost:8880/get?callback=jsonpify)
+
+## 总结
+
+本文主要与大家分享自己开发过程中封装的小工具 jsonpify。感兴趣的小伙伴，可以自行体验。这里也感慨一下，node 资源包真的很丰富，为我们快速地产出各种辅助开发工具提供很大的便利。

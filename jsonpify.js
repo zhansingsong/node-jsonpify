@@ -22,7 +22,7 @@ program
   .option('-p, --port [port]', 'set server port', 3232)
   .option('-n, --name [name]', 'set callback name', 'callback')
   .option('-w, --wrapper [wrapper]', 'set callback wrapper', 'callback')
-  .option('-C, --no-cache', 'disable cache', true)
+  // .option('-C, --no-cache', 'disable cache', true)
   .on('--help', () => {
     console.log(`\n${chalk.bold('Examples:')}\n`);
     console.log(`  ${chalk.bold.yellow('$')} jsonpify http://example.com`);
@@ -69,7 +69,7 @@ detect(port)
           port,
         )}. \nWould you like to run the proxy server on another port: ${chalk.yellowBright(
           p,
-        )} instead?`,
+        )} instead? (${chalk.bold.yellow('yY')}|nN)`,
       )}`,
     );
     return new Promise((res) => {
