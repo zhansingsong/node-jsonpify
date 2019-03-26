@@ -1,6 +1,6 @@
 # node-jsonpify
 
-在开发时，为了提高开发效率，使用 [YApi](https://github.com/YMFE/yapi) Mock 系统来辅助开发。但发现 YAPI 不支持 jsonp。而 node-jsonpify 就为此而诞生的。
+在开发时，为了提高开发效率，使用 [YApi](https://github.com/YMFE/yapi) Mock 系统来辅助开发。但 YAPI 不支持 jsonp。而 node-jsonpify 就为此而诞生的。
 
 ## Install
 
