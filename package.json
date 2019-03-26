@@ -1,0 +1,56 @@
+{
+  "name": "jsonpify",
+  "version": "0.0.1",
+  "description": "a command transforming APIs into jsonp pattern",
+  "main": "node-jsonpify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "jsonpify": "jsonpify.js"
+  },
+  "files": [
+    "jsonpify.js"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhansingsong/node-jsonpify.git"
+  },
+  "keywords": [
+    "jsonp",
+    "jsonpify"
+  ],
+  "author": "zhansingsong <zhansingsong@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhansingsong/node-jsonpify/issues"
+  },
+  "homepage": "https://github.com/zhansingsong/node-jsonpify#readme",
+  "dependencies": {
+    "address": "^1.0.3",
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "detect-port": "^1.3.0",
+    "koa": "^2.7.0",
+    "koa-logger": "^3.2.0",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5"
+  }
+}
