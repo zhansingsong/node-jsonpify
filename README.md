@@ -40,7 +40,7 @@ jsonpify http://example.com
   ```js
   // http://api.example.com
   jsonpify http://example.com  -w fun
-  jsonpify http://example.com  -wrapper fun
+  jsonpify http://example.com  --wrapper fun
 
   // 返回结果
   // fun({json data})
