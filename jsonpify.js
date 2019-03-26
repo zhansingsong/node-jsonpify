@@ -21,6 +21,7 @@ program
   .description(`${chalk.green('<origin>')}: origin of the server serving APIs `)
   .option('-p, --port [port]', 'set server port', 3232)
   .option('-n, --name [name]', 'set callback name', 'callback')
+  .option('-v, --value [value]', 'set callback value', 'callback')
   .option('-C, --no-cache', 'disable cache', true)
   .on('--help', () => {
     console.log(`\n${chalk.bold('Examples:')}\n`);
@@ -41,10 +42,14 @@ if (typeof originArg === 'undefined') {
   process.exit(1);
 }
 
-const { name, port } = program;
+const { name, value, port } = program;
 app.use(async (ctx, next) => {
   await next();
-  const cbvalue = ctx.query[name] || 'callback';
+  let cbvalue = ctx.query[name] || 'callback';
+  // callback unsupported of api
+  if (!ctx.query[name]) {
+    cbvalue = value;
+  }
   await fetch(`${originArg}${ctx.url}`)
     .then(data => data.json())
     .then((data) => {
